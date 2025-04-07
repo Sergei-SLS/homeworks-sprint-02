@@ -1,11 +1,11 @@
-import React from 'react'
+
 import Affair from './affair/Affair'
 import {AffairType, FilterType} from '../HW2'
 import s from './Affairs.module.css'
 
 type AffairsPropsType = {
-    data: any // need to fix any
-    setFilter: any
+    data: string // need to fix any
+    setFilter: (filter: FilterType) => void
     deleteAffairCallback: any
     filter: FilterType
 }
