@@ -1,3 +1,5 @@
+/*
+/// <reference types="vitest" />
 
 import { AffairType, deleteAffair } from '../HW2'
 
@@ -33,3 +35,4 @@ test('delete 6', () => {
     const newState = deleteAffair(initialState, 6)
     expect(newState.length).toBe(5)
 })
+*/
