@@ -1,6 +1,10 @@
+body {
+    /*background: black;*/
+}
+
 .message {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     margin: 10px 0;
 }
 
@@ -17,23 +21,34 @@
 }
 
 .text {
-    background-color: #f0f2f5;
-    padding: 10px 15px;
-    border-radius: 15px;
-    max-width: 60%;
-    position: relative;
+    /*background-color: #f0f2f5;*/
+    /*padding: 10px 15px;*/
+    /*border-radius: 15px;*/
+    /*max-width: 60%;*/
+    /*position: relative;*/
+    /*margin-left: 10px;*/
+    padding: 10px;
+    border-radius: 5px 5px 5px 0;
+    background-color: rgba(200, 200, 200, 0.3);
 }
 
-.text:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: -10px;
-    width: 10px;
-    height: 10px;
-    background-color: #f0f2f5;
-    clip-path: polygon(0 0, 100% 100%, 100% 0);
+.corner {
+    width: 15px;
+    height: 15px;
+    background: radial-gradient(circle at 0 0, rgba(0, 0, 0, 0) 15px, rgba(200, 200, 200, 0.3) 0);
 }
+
+/*.text::after {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    left: -8px;*/
+/*    top: 20px;*/
+/*    width: 0;*/
+/*    height: 0;*/
+/*    border-left: 8px solid transparent;*/
+/*    border-right: 8px solid transparent;*/
+/*    border-top: 8px solid #f0f2f5;*/
+/*}*/
 
 .name {
     font-weight: bold;
@@ -44,6 +59,8 @@
 .messageText {
     font-size: 14px;
     color: #333;
+    overflow-wrap: break-word;
+    white-space: normal;
 }
 
 .time {
