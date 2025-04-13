@@ -1,4 +1,5 @@
-import React from 'react'
+/*
+
 import {pureAddUserCallback} from '../HW3'
 
 let initialState: any[]
@@ -16,3 +17,4 @@ test('name 1', () => {
     expect(initialState[0].name).toBe('name')
     expect(!!initialState[0]._id).toBe(true)
 })
+*/

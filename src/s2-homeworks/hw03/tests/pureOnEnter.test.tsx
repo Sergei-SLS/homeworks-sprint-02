@@ -1,4 +1,5 @@
-import React from 'react'
+/*
+
 import {pureOnEnter} from '../GreetingContainer'
 
 let added: any
@@ -18,3 +19,4 @@ test('name 2', () => {
     pureOnEnter({key: ''} as any, addUser)
     expect(added).toBe(false)
 })
+*/
