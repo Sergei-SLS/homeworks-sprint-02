@@ -5,22 +5,24 @@
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
 }
 
+.button:disabled,
 .disabled {
     opacity: 0.5;
     cursor: not-allowed;
+    background-color: #004D99;
 }
 
 .secondary {
     background-color: white;
-    color: #007bff;
-    border: 2px solid #007bff;
+    color: #0066cc;
+    border: 2px solid #0066cc;
 }
 
 .default {
-    background-color: #007bff;
+    background-color: #0066CC;
     color: white;
 }
 
@@ -30,23 +32,29 @@
 }
 
 .default:hover {
+    background-color: #005bb5;
 }
 
 .red:hover {
+    /*background-color: #b71c1c;*/
 }
 
 .secondary:hover {
+    background-color: #e6f0ff;
 }
 
 
 .default:active {
+    background-color: #004999;
+    transform: scale(0.98);
 }
 
 .secondary:active {
+    background-color: #cce0ff;
+    transform: scale(0.98);
 }
 
 .red:active {
-}
-
-.button:disabled {
+    background-color: #9a0007;
+    transform: scale(0.98);
 }
