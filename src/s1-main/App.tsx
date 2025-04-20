@@ -2,6 +2,7 @@ import s from './App.module.css'
 import HW1 from '../s2-homeworks/hw01/HW1'
 import HW2 from "../s2-homeworks/hw02/HW2.tsx";
 import HW3 from "../s2-homeworks/hw03/HW3.tsx";
+import HW4 from "../s2-homeworks/hw04/HW4.tsx";
 
 
 function App() {
