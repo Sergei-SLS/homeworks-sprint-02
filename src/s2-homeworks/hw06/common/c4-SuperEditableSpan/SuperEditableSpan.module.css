@@ -1,11 +1,31 @@
 .spanBlock {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
 }
 
 .span {
+    font-size: 16px;
+    padding: 4px 8px;
+    color: #333;
 }
 
 .input {
+    font-size: 16px;
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
 }
 
 .pen {
+    width: 16px;
+    height: 16px;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.pen:hover {
+    opacity: 1;
 }
