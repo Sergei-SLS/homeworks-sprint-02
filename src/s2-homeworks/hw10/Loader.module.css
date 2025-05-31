@@ -1,3 +1,18 @@
 .loader {
-    /*свг и/или анимация*/
+    width: 40px;
+    height: 40px;
+    border: 5px solid #cfcfcf; /* светлый цвет для фона */
+    border-top: 5px solid #007bff; /* синий цвет вращающейся части */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
