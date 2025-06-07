@@ -7,11 +7,18 @@ const SuperRange: React.FC<SliderProps> = (props) => {
                 color: '#00CC22',
                 width: '147px',
                 height: 4,
+                '& .MuiSlider-track': {
+                    border: 'none',
+                },
+                '& .MuiSlider-rail': {
+                    color: '#bfbfbf',
+                    opacity: 1,
+                },
                 '& .MuiSlider-thumb': {
                     height: 18,
                     width: 18,
                     backgroundColor: '#fff',
-                    border: '2px solid currentColor',
+                    border: '2px solid #00CC22',
                     '&:hover, &.Mui-focusVisible, &.Mui-active': {
                         boxShadow: '0 0 0 6px rgba(0, 204, 34, 0.16)',
                     },
