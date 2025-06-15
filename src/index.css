@@ -5,6 +5,11 @@
 }
 
 body {
+    background-color: var(--background) !important;
+    color: var(--color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
     'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
@@ -19,20 +24,20 @@ code {
     monospace;
 }
 
-/*[data-theme='1'] {*/
-/*    --color: #000000;*/
-/*    --background: #FFFFFF;*/
-/*}*/
+[data-theme='1'] {
+    --color: #000000;
+    --background: #FFFFFF;
+}
 
-/*[data-theme='2'] {*/
-/*    --color: #000000;*/
-/*    --background: #DDEEFF;*/
-/*}*/
+[data-theme='2'] {
+    --color: #000000;
+    --background: #DDEEFF;
+}
 
-/*[data-theme='3'] {*/
-/*    --color: #FFFFFF;*/
-/*    --background: #212A34;*/
-/*}*/
+[data-theme='3'] {
+    --color: #FFFFFF;
+    --background: #212A34;
+}
 
 /*html {*/
 /*    background-color: var(--background) !important;*/
