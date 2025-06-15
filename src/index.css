@@ -38,11 +38,3 @@ code {
     --color: #FFFFFF;
     --background: #212A34;
 }
-
-/*html {*/
-/*    background-color: var(--background) !important;*/
-/*    color: var(--color);*/
-/*    transition: background-color 0.3s ease, color 0.3s ease;*/
-/*    font-family: Arial, sans-serif;*/
-/*    min-height: 100vh;*/
-/*}*/
