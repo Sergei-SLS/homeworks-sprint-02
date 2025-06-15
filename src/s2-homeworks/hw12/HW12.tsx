@@ -29,8 +29,6 @@ const HW12 = () => {
 
     useEffect(() => {
         document.documentElement.dataset.theme = themeId + ''
-        document.body.style.backgroundColor =
-            themeId === 1 ? '#FFFFFF' : themeId === 2 ? '#DDEEFF' : '#212A34'
     }, [themeId])
 
     return (
