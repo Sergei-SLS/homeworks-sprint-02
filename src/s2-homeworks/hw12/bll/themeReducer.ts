@@ -1,9 +1,5 @@
-const initState: themeStateType = {
-    themeId: 1,
-}
-
-type themeStateType = {
-    themeId: number,
+const initState= {
+    themeId: 1 as number,
 }
 
 type changeThemeIdActionType = {
@@ -13,7 +9,7 @@ type changeThemeIdActionType = {
 
 type actionType = changeThemeIdActionType
 
-export const themeReducer = (state = initState, action: actionType): themeStateType => { // fix any
+export const themeReducer = (state = initState, action: actionType) => { // fix any
     switch (action.type) {
             case 'SET_THEME_ID':
                 return { ...state, themeId: action.id}
