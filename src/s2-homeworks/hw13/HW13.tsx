@@ -20,6 +20,7 @@ const HW13 = () => {
     const [text, setText] = useState('')
     const [info, setInfo] = useState('')
     const [image, setImage] = useState('')
+    const [loading, setLoading] = useState(false)
 
     const send = (x?: boolean | null) => () => {
         const url =
@@ -31,18 +32,38 @@ const HW13 = () => {
         setImage('')
         setText('')
         setInfo('...loading')
+        setLoading(true)
 
         axios
             .post(url, {success: x})
             .then((res) => {
                 setCode('Код 200!')
                 setImage(success200)
-                // дописать
+                setText('Запрос прошел успешно')
+                setInfo('Успешный POST-запрос')
 
             })
             .catch((e) => {
-                // дописать
-
+                const status = e.response?.status
+                if (status === 400) {
+                    setCode('Error 400')
+                    setImage(error400)
+                    setText('Ошибка клиента. Проверьте параметры запроса.')
+                    setInfo('Bad Request')
+                } else if (status === 500) {
+                    setCode('Error 500')
+                    setImage(error500)
+                    setText('Ошибка сервера. Повторите попытку позже.')
+                    setInfo('Internal Server Error')
+                } else {
+                    setCode('Unknown error')
+                    setImage(errorUnknown)
+                    setText(e.message || 'Произошла ошибка')
+                    setInfo('Unknown error')
+                }
+            })
+            .finally(() => {
+                setLoading(false)
             })
     }
 
