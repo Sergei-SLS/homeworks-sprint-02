@@ -30,7 +30,7 @@ const HW13 = () => {
                     ? 'https://httpstat.us/400'
                     : x === undefined
                         ? 'https://httpstat.us/500'
-                : 'https://samurai.it-incubator.io/api/3.0/homework/test'
+                : 'https://some.invalid.url'
 
         setCode('')
         setImage('')
@@ -43,7 +43,7 @@ const HW13 = () => {
             .then((res) => {
                 setCode('Код 200!')
                 setImage(success200)
-                setText(res.data.message || 'Запрос прошел успешно')
+                setText(res.data.message || '...всё ок)')
                 setInfo('Успешный POST-запрос')
 
             })
@@ -52,18 +52,18 @@ const HW13 = () => {
                 if (status === 400) {
                     setCode('Error 400')
                     setImage(error400)
-                    setText('Ошибка клиента. Проверьте параметры запроса.')
+                    setText('400')
                     setInfo('Bad Request')
                 } else if (status === 500) {
                     setCode('Error 500')
                     setImage(error500)
-                    setText('Ошибка сервера. Повторите попытку позже.')
+                    setText('500')
                     setInfo('Internal Server Error')
                 } else {
-                    setCode('Unknown error')
+                    setCode('Error')
                     setImage(errorUnknown)
-                    setText(e.message || 'Произошла ошибка')
-                    setInfo('Unknown error')
+                    setText(e.message || 'Error')
+                    setInfo('Error')
                 }
             })
             .finally(() => {
