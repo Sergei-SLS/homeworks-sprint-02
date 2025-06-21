@@ -39,7 +39,7 @@ const HW13 = () => {
             .then((res) => {
                 setCode('Код 200!')
                 setImage(success200)
-                setText('Запрос прошел успешно')
+                setText(res.data.message || 'Запрос прошел успешно')
                 setInfo('Успешный POST-запрос')
 
             })
@@ -77,8 +77,7 @@ const HW13 = () => {
                         id={'hw13-send-true'}
                         onClick={send(true)}
                         xType={'secondary'}
-                        // дописать
-
+                        disabled={loading}
                     >
                         Send true
                     </SuperButton>
@@ -86,8 +85,7 @@ const HW13 = () => {
                         id={'hw13-send-false'}
                         onClick={send(false)}
                         xType={'secondary'}
-                        // дописать
-
+                        disabled={loading}
                     >
                         Send false
                     </SuperButton>
@@ -95,8 +93,7 @@ const HW13 = () => {
                         id={'hw13-send-undefined'}
                         onClick={send(undefined)}
                         xType={'secondary'}
-                        // дописать
-
+                        disabled={loading}
                     >
                         Send undefined
                     </SuperButton>
@@ -104,8 +101,7 @@ const HW13 = () => {
                         id={'hw13-send-null'}
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
-                        // дописать
-
+                        disabled={loading}
                     >
                         Send null
                     </SuperButton>
