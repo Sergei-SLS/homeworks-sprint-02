@@ -22,7 +22,7 @@ const HW13 = () => {
     const [image, setImage] = useState('')
     const [loading, setLoading] = useState(false)
 
-    const send = (x?: boolean | null) => () => {
+    const send = (x?: boolean |  null) => () => {
         const url =
             x === null
                 ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
@@ -55,6 +55,11 @@ const HW13 = () => {
                     setImage(error500)
                     setText('Ошибка сервера. Повторите попытку позже.')
                     setInfo('Internal Server Error')
+                } else if (e.message === 'Network Error') {
+                    setCode('Network Error')
+                    setText('Сервер не отвечает или домен не существует')
+                    setInfo('Ошибка сети')
+                    setImage(errorUnknown)
                 } else {
                     setCode('Unknown error')
                     setImage(errorUnknown)
