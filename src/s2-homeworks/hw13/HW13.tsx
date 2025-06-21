@@ -24,8 +24,12 @@ const HW13 = () => {
 
     const send = (x?: boolean |  null) => () => {
         const url =
-            x === null
-                ? 'https://xxxxxx.ccc' // имитация запроса на не корректный адрес
+            x === true
+                ? 'https://httpstat.us/200'
+                : x === false
+                    ? 'https://httpstat.us/400'
+                    : x === undefined
+                        ? 'https://httpstat.us/500'
                 : 'https://samurai.it-incubator.io/api/3.0/homework/test'
 
         setCode('')
@@ -55,11 +59,6 @@ const HW13 = () => {
                     setImage(error500)
                     setText('Ошибка сервера. Повторите попытку позже.')
                     setInfo('Internal Server Error')
-                } else if (e.message === 'Network Error') {
-                    setCode('Network Error')
-                    setText('Сервер не отвечает или домен не существует')
-                    setInfo('Ошибка сети')
-                    setImage(errorUnknown)
                 } else {
                     setCode('Unknown error')
                     setImage(errorUnknown)
