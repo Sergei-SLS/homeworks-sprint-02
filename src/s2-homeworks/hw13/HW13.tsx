@@ -22,15 +22,11 @@ const HW13 = () => {
     const [image, setImage] = useState('')
     const [loading, setLoading] = useState(false)
 
-    const send = (x?: boolean |  null) => () => {
+    const send = (x?: boolean | null) => () => {
         const url =
-            x === true
-                ? 'https://httpstat.us/200'
-                : x === false
-                    ? 'https://httpstat.us/400'
-                    : x === undefined
-                        ? 'https://httpstat.us/500'
-                : 'https://some.invalid.url'
+            x === null
+                ? 'https://xxxxxx.ccc'
+                : 'https://samurai.it-incubator.io/api/3.0/homework/test'
 
         setCode('')
         setImage('')
@@ -43,28 +39,31 @@ const HW13 = () => {
             .then((res) => {
                 setCode('Код 200!')
                 setImage(success200)
-                setText(res.data.message || '...всё ок)')
-                setInfo('Успешный POST-запрос')
+                setText(res.data.errorText || '...всё ок)')
+                setInfo(res.data.info)
 
             })
             .catch((e) => {
-                const status = e.response?.status
-                if (status === 400) {
-                    setCode('Error 400')
-                    setImage(error400)
-                    setText('400')
-                    setInfo('Bad Request')
-                } else if (status === 500) {
-                    setCode('Error 500')
-                    setImage(error500)
-                    setText('500')
-                    setInfo('Internal Server Error')
-                } else {
-                    setCode('Error')
-                    setImage(errorUnknown)
-                    setText(e.message || 'Error')
-                    setInfo('Error')
+                if (e.response) {
+                    const status = e.response.status
+                    if (status === 400) {
+                        setCode('Error 400')
+                        setImage(error400)
+                        setText(e.response.data.errorText)
+                        setInfo(e.response.data.info)
+                    } else if (status === 500) {
+                        setCode('Error 500')
+                        setImage(error500)
+                        setText(e.response.data.errorText)
+                        setInfo(e.response.data.info)
+                    } else {
+                        setCode('Error')
+                        setImage(errorUnknown)
+                        setText(e.message || 'Network Error')
+                        setInfo('Error')
+                    }
                 }
+
             })
             .finally(() => {
                 setLoading(false)
