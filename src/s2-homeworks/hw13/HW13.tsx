@@ -57,13 +57,17 @@ const HW13 = () => {
                         setText(e.response.data.errorText || 'эмитация ошибки на сервере')
                         setInfo(e.response.data.info)
                     } else {
-                        setCode('Error')
+                        setCode(`Error!`)
                         setImage(errorUnknown)
-                        setText(e.message || 'Network Error')
+                        setText(e.message || '...loading')
                         setInfo('Error')
                     }
+                } else {
+                    setCode('Error!')
+                    setImage(errorUnknown)
+                    setText(e.message || '...loading')
+                    setInfo('Network error или неправильный адрес')
                 }
-
             })
             .finally(() => {
                 setLoading(false)
