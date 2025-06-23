@@ -66,7 +66,7 @@ const HW13 = () => {
                     setCode('Error!')
                     setImage(errorUnknown)
                     setText(e.message || '...loading')
-                    setInfo('Network error или неправильный адрес')
+                    setInfo('Error')
                 }
             })
             .finally(() => {
