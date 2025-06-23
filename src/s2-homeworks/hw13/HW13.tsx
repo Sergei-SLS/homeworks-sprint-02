@@ -49,12 +49,12 @@ const HW13 = () => {
                     if (status === 400) {
                         setCode('Error 400')
                         setImage(error400)
-                        setText(e.response.data.errorText)
+                        setText(e.response.data.errorText || 'Ты не отправил success в body вообще!')
                         setInfo(e.response.data.info)
                     } else if (status === 500) {
                         setCode('Error 500')
                         setImage(error500)
-                        setText(e.response.data.errorText)
+                        setText(e.response.data.errorText || 'эмитация ошибки на сервере')
                         setInfo(e.response.data.info)
                     } else {
                         setCode('Error')
