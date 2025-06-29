@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import  {useEffect, useState} from 'react'
 import s2 from '../../s1-main/App.module.css'
 import s from './HW14.module.css'
 import axios from 'axios'
