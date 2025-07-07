@@ -67,12 +67,12 @@ const HW15 = () => {
 
         const newParams = {
             sort,
-            page: newPage,
-            count: newCount,
+            page: newPage.toString(),
+            count: newCount.toString(),
         }
 
         setSearchParams(newParams)
-        sendQuery(newParams)
+        sendQuery({sort, page: newPage, count: newCount})
     }
 
     const onChangeSort = (newSort: string) => {
@@ -81,19 +81,26 @@ const HW15 = () => {
 
         const newParams = {
             sort: newSort,
-            page: 1,
-            count
+            page: '1',
+            count: count.toString()
         }
 
         setSearchParams(newParams)
-        sendQuery(newParams)
+        sendQuery({sort: newSort, page: 1, count})
     }
 
     useEffect(() => {
         const params = Object.fromEntries(searchParams)
-        sendQuery({page: params.page, count: params.count})
-        setPage(+params.page || 1)
-        setCount(+params.count || 4)
+
+        const page = +params.page || 1
+        const count = +params.count || 4
+        const sort = params.sort || ''
+
+        setPage(page)
+        setCount(count)
+        setSort(sort)
+
+        sendQuery({ page, count, sort })
     }, [])
 
     const mappedTechs = techs.map(t => (
