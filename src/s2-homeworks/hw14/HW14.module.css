@@ -1,7 +1,21 @@
 .tech {
+    padding: 8px 12px;
+    margin: 6px 0;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    transition: background-color 0.3s;
+}
 
+.tech:hover {
+    background-color: #e0e0e0;
 }
 
 .loading {
-
+    font-style: italic;
+    font-size: 14px;
+    color: #888;
+    margin: 12px 0;
+    min-height: 20px;
 }
