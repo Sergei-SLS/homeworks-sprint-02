@@ -12,7 +12,7 @@ type DefaultSelectPropsType = DetailedHTMLProps<
 
 type OptionsType = {
     id: number
-    value: number
+    value: string
 }
 
 type SuperSelectPropsType = DefaultSelectPropsType & {
